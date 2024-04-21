@@ -106,7 +106,7 @@
     0% { transform: rotate(-360deg); } 100% { transform: rotate(360deg); }
   }
   .cont-globe {
-    --max-wh:       520px;
+    --max-wh:       672px;
     --pos-all-bef:  12px;
     --brd-w-bef:    12px;
     --pos-all-bef:  12px;
@@ -118,33 +118,28 @@
     aspect-ratio:   1;
     position:       relative;
     overflow:       clip;
-    transition: all .3s var(--cubic-easeInOutSine);
+    transition:     all .3s var(--cubic-easeInOutSine);
 
   }
   @media screen {
-    @media (min-width: 360px) {.cont-globe { --pos-all-bef: 16px; --brd-w-bef: 16px; }}
-    @media (min-width: 520px) {.cont-globe { --pos-all-bef: 18px; --brd-w-bef: 24px; }}
-    @media (min-width: 600px) {.cont-globe { --pos-all-bef: 20px; }}
-    @media (min-width: 640px) {.cont-globe { --pos-all-bef: 24px; }}
-    @media (min-width: 720px) {.cont-globe { --pos-all-bef: 22px; --brd-w-bef: 32px; }}
-    @media (min-width: 760px) {.cont-globe { --pos-all-bef: 20px; --brd-w-bef: 40px; }}
+    @media (min-width: $media-025) {.cont-globe { --pos-all-bef: 16px; --brd-w-bef: 16px; }}
+    @media (min-width: $media-125) {.cont-globe { --pos-all-bef: 18px; --brd-w-bef: 24px; }}
+    @media (min-width: $media-175) {.cont-globe { --pos-all-bef: 20px; }}
+    @media (min-width: $media-200) {.cont-globe { --pos-all-bef: 24px; }}
+    @media (min-width: $media-250) {.cont-globe { --pos-all-bef: 22px; --brd-w-bef: 32px; }}
+    @media (min-width: $media-275) {.cont-globe { --pos-all-bef: 20px; --brd-w-bef: 40px; }}
   }
-  :global([data-theme="light"] .cont-globe::before) { --a-brd: .24; --l-bef: var(--l-500); }
-  :global([data-theme="dark"] .cont-globe::before)  { --a-brd: .08; --l-bef: var(--l-300); }
+  :global([data-theme="light"] .cont-globe::before) { --a-brd: .08; --l-bef: var(--l-500); }
+  :global([data-theme="dark"] .cont-globe::before)  { --a-brd: .04; --l-bef: var(--l-300); }
   .cont-globe::before {
-    --brd-w: 12px;
-    --a-orn: var(--a-brd, .64);
-
     content:        '';
     position:       absolute;
     top:            var(--pos-all-bef);
     right:          var(--pos-all-bef);
     bottom:         var(--pos-all-bef);
     left:           var(--pos-all-bef);
-    border:         dashed var(--brd-w-bef) hsla(var(--hs-surface), var(--l-bef), var(--a-orn));
+    border:         dashed var(--brd-w-bef) hsla(var(--hs-surface), var(--l-bef), var(--a-brd));
     border-radius:  3000px;
-    /* filter:         drop-shadow(0px 0px 8px hsla(var(--hs-surface), var(--l-025), .16)); */
-
     animation:      rotating 48s linear infinite;
   }
   canvas {

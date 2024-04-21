@@ -15,7 +15,7 @@ export const config_theme = () => {
     current_theme.set(saved_theme)
     return
   }
-  const prefers_dark = window.matchMedia('(prefers-color-scheme: dark)',).matches
+  const prefers_dark = window.matchMedia('(prefers-color-scheme: dark)').matches
   const theme = prefers_dark ? 'dark' : 'light'
   set_theme(theme)
 }

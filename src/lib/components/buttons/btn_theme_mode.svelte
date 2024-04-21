@@ -6,7 +6,7 @@
   const toggle_theme = () => { set_theme( $current_theme === 'light' ? 'dark' : 'light') }
   $: theme_desc = $current_theme === 'dark' ? 'escuro' : 'claro'
   $: thumb      = $current_theme === 'dark' ? 'calc( var(--sz-w) - 30px - 4px)' : '2px'
-  $: s_txt      = $current_theme === 'dark' ? 'left: 10px;' : 'right: 10px;'
+  $: s_txt      = $current_theme === 'dark' ? 'left: 12px;' : 'right: 12px;'
 </script>
 
 <style lang="scss">
@@ -18,25 +18,26 @@
     --clr-txt:    hsla( var(--hs-of-this), var(--l-250), 1 );
     --clr-brd:    hsla( var(--hs-of-this), var(--l-900), 1 );
     --clr-out:    hsla( var(--hs-of-this), var(--l-out-hover, var(--l-500) ), 0 );
-    --bg-btn:     hsla( var(--hs-of-this), var(--l-850), 1 );
-    --bg-thumb:   hsla( var(--hs-of-this), var(--l-600), 1 );
-    --rad:        8px;
+    --bg-btn:     hsla( var(--hs-of-this), var(--l-875), 1 );
+    --bg-thumb:   hsla( var(--hs-aux), var(--l-350), 1 );
+    --rad:        80px;
     --sz-w:       100%;
     --trs:
-      all         .3s var(--cubic-easeInOutSine),
-      box-shadow  .2s var(--cubic-easeInOutSine),
-      border      .2s var(--cubic-easeInOutSine)
+      all             .3s var(--cubic-easeInOutSine),
+      box-shadow      .2s var(--cubic-easeInOutSine),
+      border          .2s var(--cubic-easeInOutSine),
+      outline-offset  .2s var(--cubic-easeInOutSine)
     ;
 
-    width:          96px;
-    height:         40px;
+    width:          112px;
+    min-height:     40px;
     position:       relative;
     line-height:    1;
     background:     var(--bg-btn);
     border:         solid 2px var(--clr-brd);
     border-radius:  var(--rad);
     outline:        solid 4px var(--clr-out);
-    outline-offset: -2px;
+    outline-offset: -4px;
     cursor:         pointer;
     transition:     var(--trs);
 
@@ -47,20 +48,23 @@
 
     &:hover {
       --clr-brd:  hsla( var(--hs-of-this),  var(--l-500), 1 );
-      --clr-txt:  hsla( var(--hs-detail),   var(--l-350), 1 );
+      --clr-txt:  hsla( var(--hs-detail),   var(--l-200), 1 );
       --bg-btn:   hsla( var(--hs-of-this),  var(--l-900), 1 );
-      --bg-thumb: hsla( var(--hs-of-this),  var(--l-350), 1 );
-      --c1:       hsla( var(--hs-of-this),  var(--l-850), 1 );
+      --bg-thumb: hsla( var(--hs-of-this),  var(--l-200), 1 );
+      --c1:       hsla( var(--hs-effect),  var(--l-800), 1 );
       outline: solid 4px hsla( var(--hs-of-this),  var(--l-out-hover, var(--l-975) ), .4 );
       outline-offset: 2px;
+      box-shadow:
+        0px 0px 32px 4px hsla( var(--hs-effect), var(--l-250), .40 )
+      ;
     }
   }
 
-  :global([data-theme="light"] .txt)  { --f-wei: 600 }
-  :global([data-theme="dark"] .txt)   { --f-wei: 500 }
+  :global([data-theme="light"] .txt)  { --f-wei: 700 }
+  :global([data-theme="dark"] .txt)   { --f-wei: 600 }
   .txt {
     position:     absolute;
-    font-size:    var(--fts-025);
+    font-size:    var(--fts-100);
     font-weight:  var(--f-wei);
     line-height:  1;
     color:        var(--clr-txt);

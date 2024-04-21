@@ -27,8 +27,6 @@
   ornament    = orn
 */
 
-
-/* RESET */
 *, *::before, *::after {
   box-sizing: border-box; -webkit-box-sizing: border-box;
   outline: 0; margin: 0; padding: 0;
@@ -58,7 +56,6 @@ input, button, textarea, select { font: inherit; padding: 0; border: none; }
   }
 }
 
-/* INIT - fonts */
 :root {
   --font-main: 'Alexandria Variable',       sans-serif;
   --font-mono: 'Source Code Pro Variable',  sans-serif;
@@ -76,25 +73,22 @@ input, button, textarea, select { font: inherit; padding: 0; border: none; }
 }
 html { font-family: var(--font-main); }
 
-/* INIT - colors */
 :root {
-  /* colors in hs of hsl */
-  --hs-default: 0,    0%;
-  /* --hs-surface: 224,  40%; */
-  /* --hs-surface: 232,  40%; */
-  --hs-surface: 240,  32%;
-  --hs-main:    208,  80%;
-  --hs-second:  144,  80%;
-  --hs-detail:  44,   100%;
-  --hs-info:    232,  96%;
-  --hs-success: 96,   80%;
-  --hs-warning: 28,   96%;
-  --hs-error:   4,    80%;
-  --hs-alert:   56,   96%;
-  --hs-focus:   320,  96%;
-  --hs-comment: 272,  32%;
-  --hs-effect:  280,  56%;
-  /* tonalidades não afetadas pelo modo do tema */
+  --hs-surface: 240deg,  32%;
+  --hs-aux:     240deg,  16%;
+  --hs-main:    208deg,  80%;
+  --hs-second:  144deg,  80%;
+  --hs-detail:  44deg,   100%;
+  --hs-info:    232deg,  96%;
+  --hs-success: 80deg,   80%;
+  --hs-warning: 28deg,   96%;
+  --hs-error:   8deg,    96%;
+  --hs-alert:   56deg,   88%;
+  --hs-focus:   320deg,  96%;
+  --hs-default: 0deg,    0%;
+  --hs-comment: 168deg,  48%;
+  --hs-effect:  184deg,  72%;
+
   --l-raw-025: 5%;  --l-raw-050: 8%;  --l-raw-075: 10%; --l-raw-100: 12%;
   --l-raw-125: 15%; --l-raw-150: 18%; --l-raw-175: 21%; --l-raw-200: 24%;
   --l-raw-225: 27%; --l-raw-250: 30%; --l-raw-275: 33%; --l-raw-300: 36%;
@@ -128,7 +122,6 @@ html { font-family: var(--font-main); }
   --l-900: 12%;   --l-925: 10%; --l-950: 8%;    --l-975: 5%;
 }
 
-/* INIT - beziers, easings, etc. */
 :root {
   --cubic-easeInSine:     cubic-bezier(0.12, 0, 0.39, 0);
   --cubic-easeOutSine:    cubic-bezier(0.61, 1, 0.88, 1);
@@ -156,11 +149,10 @@ html { font-family: var(--font-main); }
   --cubic-easeInOutBack:  cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
-/* INIT - scrollbar */
 :root {
   --thumb-w:      12px;
-  --color-track:  hsl(var(--hs-surface), var(--l-600));
-  --color-thumb:  hsl(var(--hs-surface), var(--l-300));
+  --color-track:  hsl(var(--hs-surface), var(--l-775));
+  --color-thumb:  hsl(var(--hs-surface), var(--l-250));
 }
 @supports not selector(*::-webkit-scrollbar) {
   * {
@@ -173,26 +165,27 @@ html { font-family: var(--font-main); }
 *::-webkit-scrollbar-track-piece { background: var(--color-track); }
 *::-webkit-scrollbar-thumb       { background: var(--color-thumb); }
 
-
-/* INIT - body */
-[data-theme="light"]  body { --a-01: 1; --a-02: 1; --a-03: .012; --l-01: var(--l-850); }
-[data-theme="dark"]   body { --a-01: 1; --a-02: 1; --a-03: .008; --l-01: var(--l-900); }
+[data-theme="light"]  body { --a-01: 1; --a-02: 1; --a-03: .016; --l-01: var(--l-875); }
+[data-theme="dark"]   body { --a-01: 1; --a-02: 1; --a-03: .012; --l-01: var(--l-900); }
 body {
   --c-01: hsla(var(--hs-surface), var(--l-01),  var(--a-02));
   --c-02: hsla(var(--hs-surface), var(--l-325), var(--a-03));
   --bg-body-color: hsla(var(--hs-surface), var(--l-01),  var(--a-01));
+  --bg-sz: 32px;
   background: var(--bg-body-color);
-  color:      hsla(var(--hs-surface), var(--l-225), 1);
-  background-size: 24px 24px;
+  color:      hsla(var(--hs-surface), var(--l-200), 1);
+  background-size: var(--bg-sz) var(--bg-sz);
   background-attachment: fixed;
   background-image:
     linear-gradient(var(--c-02) 2px, transparent 2px),
     linear-gradient(to right, var(--c-02) 2px, var(--c-01) 2px)
   ;
 }
-a { color: hsl( var(--hs-surface), var(--l-200) ); }
 
-/* INIT - utils align classes - flx-center - flx-col - flx-col-center - flx-row-nowrap - flx-row-wrap */
+:root {
+  --w-md-menu: 148px;
+}
+
 .flx-center, .flx-col, .flx-col-center, .flx-row-nowrap, .flx-row-wrap { display: flex; }
 .flx-center, .flx-col-center, .flx-row-nowrap, .flx-row-wrap { align-items: center; }
 .flx-col, .flx-col-center { flex-flow: column; }
@@ -200,8 +193,6 @@ a { color: hsl( var(--hs-surface), var(--l-200) ); }
 .flx-row-nowrap  { flex-flow: row nowrap; }
 .flx-row-wrap    { flex-flow: row wrap; }
 
-
-/* INIT - visually utils */
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -214,7 +205,6 @@ a { color: hsl( var(--hs-surface), var(--l-200) ); }
   white-space: nowrap;
 }
 
-/* INIT - texts effects utils */
 .txt-grd-01 {
   --c-01: hsl(var(--hs-main), var(-l-325));
   --c-02: hsl(var(--hs-second), var(-l-325));
@@ -228,4 +218,3 @@ a { color: hsl( var(--hs-surface), var(--l-200) ); }
   box-shadow:              none;
   background-image:        var(--grd);
 }
-

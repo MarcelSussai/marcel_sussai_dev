@@ -13,9 +13,9 @@
 
   const LINKS = [
     { name: 'home',         href: '/', icon: IcoHome      },
-    { name: 'quem sou',     href: '/', icon: IcoAboutMe   },
-    { name: 'habilidades',  href: '/', icon: IcoSkills    },
-    { name: 'portfólio',    href: '/', icon: IcoPortfolio },
+    { name: 'quem sou',     href: '/dashboard/colors', icon: IcoAboutMe   },
+    { name: 'habilidades',  href: '/dashboard/texts', icon: IcoSkills    },
+    { name: 'portfólio',    href: '/dashboard/testes', icon: IcoPortfolio },
     { name: 'artigos',      href: '/', icon: IcoArticles  },
     { name: 'contato',      href: '/teste', icon: IcoContact   },
   ]
@@ -25,11 +25,11 @@
   @import '$lib/styles/vars.scss';
 
   .all {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    width: fit-content;
-    transition: all .3s var(--cubic-easeInOutSine);
+    width:                  100%;
+    display:                grid;
+    grid-template-columns:  repeat(2, 1fr);
+    gap:                    12px;
+    transition:             all .3s var(--cubic-easeInOutSine);
 
     @media (min-width: $md-menu) {
       grid-template-columns: repeat(1, 1fr);

@@ -13,6 +13,7 @@ import Logotype     from './components/logo/logotype.svelte'
 import MenuLink     from './components/links/menu_link.svelte'
 import MenuAllLinks from './components/containers/menu_all_links.svelte'
 import Menu         from './components/containers/menu.svelte'
+import BtnOpenMenu from './components/buttons/btn_open_menu.svelte'
 import BtnThemeMode from './components/buttons/btn_theme_mode.svelte'
 import Header       from './components/containers/header.svelte'
 import Globe        from './components/ornaments/globe.svelte'
@@ -23,7 +24,7 @@ export {
   IcoPortfolio,   IcoSkills,      IcoSun,
   LogoSymbol,     Logotype,
   MenuLink,       MenuAllLinks,   Menu,
-  BtnThemeMode,
+  BtnThemeMode,   BtnOpenMenu,
   Header,
   Globe,
 }
