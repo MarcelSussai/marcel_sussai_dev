@@ -15,34 +15,33 @@
     --hs-of-this: var(--hs-surface);
     --brd-clr:  hsla( var(--hs-of-this), var(--l-raw-100), 1 );
 
-    width: 64px;
-    height: 56px;
-    position: fixed;
-    bottom: 64px;
-    right: 0;
-    z-index: 999;
-    padding: 0px 8px 0px 0px;
-    border-top:     solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
-    border-left:    solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
-    border-bottom:  solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
-    border-radius: 32px 0 0 32px;
-    background: hsla( var(--hs-of-this), var(--l-350), .32 );
-    backdrop-filter: blur(2px);
+    width:            64px;
+    height:           56px;
+    position:         fixed;
+    bottom:           64px;
+    right:            0;
+    z-index:          999;
+    padding:          0px 8px 0px 0px;
+    border-top:       solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
+    border-left:      solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
+    border-bottom:    solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
+    border-radius:    32px 0 0 32px;
+    background:       hsla( var(--hs-of-this), var(--l-350), .32 );
+    backdrop-filter:  blur(2px);
+    cursor:           pointer;
+    transition:       all .3s var(--cubic-easeInOutSine);
     box-shadow:
       inset 2px 0 16px -2px hsla( var(--hs-of-this), var(--l-raw-850), .8 ),
       -8px 4px 32px 0px hsla( var(--hs-of-this), var(--l-500), .48 )
     ;
-    cursor: pointer;
-    transition: all .3s var(--cubic-easeInOutSine);
-    &:hover {
-      --hs-of-this: var(--hs-effect);
-    }
+    &:hover { --hs-of-this: var(--hs-effect); }
     @media (min-width: $md-menu) { display: none; }
   }
+
   .all-bars {
-    width: 40px;
-    height: 40px;
-    position: relative;
+    width:      40px;
+    height:     40px;
+    position:   relative;
     background: hsla( var(--hs-of-this), var(--l-200), 1 );
     border: solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
     border-radius: 9999px;

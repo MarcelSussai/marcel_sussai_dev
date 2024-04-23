@@ -1,7 +1,5 @@
 <script lang="ts">
-import { LogoSymbol } from '$lib'
-
-
+  import { LogoSymbol } from '$lib'
 </script>
 
 <style lang="scss">
@@ -75,6 +73,7 @@ import { LogoSymbol } from '$lib'
     text-shadow:  0px 0px 12px hsla( var(--hs-second), var(--l-raw-700), .4 );
   }
 </style>
+
 
 <div class="wrap-all flx-row-nowrap">
   <div class="wrap-symbol"> <LogoSymbol /> </div>

@@ -6,9 +6,13 @@
 
   onMount(() => {
     config_theme()
-    addEventListener('scroll', (e) => {
-      // console.log(window.scrollY)
-    })
+    // addEventListener('scroll', (e) => {
+    //   console.log(window.scrollY)
+    // })
+
+    // addEventListener('wheel', (e) => {
+    //   if(document.scrollingElement) document.scrollingElement.scrollTop += e.deltaY * .16
+    // })
   })
   export let data
 </script>

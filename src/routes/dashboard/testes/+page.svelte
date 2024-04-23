@@ -1,25 +1,36 @@
 <script lang="ts">
-	import { observe, default_params_action, type Params_action } from '$lib/actions/observerAction'
+	import { observe, type Observe_result } from '$lib/actions/observe'
 
-  let fn_test = (v: any) => {
-    console.log('V', v.detail);
-    
+
+
+  let is_visible: boolean | undefined = false
+
+
+  const fn_test_1 = ({ detail }: CustomEventInit<Observe_result>) => {
+    is_visible = detail?.is_only_by_bottom
   }
 
 </script>
 
 <style lang="scss">
   .el-test {
+    width: 80px;
+    height: 80px;
     padding: 8px;
     background: cadetblue;
+    transition: all .6s var(--cubic-easeInOutSine);
+    opacity: 0;
   }
-  .t2 { height: 888px; }
+  .t2 { height: 400px; }
+  .visible {
+    opacity: 1;
+    background: red;
+  }
 </style>
 
-
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="el-test" on:emit={fn_test} use:observe={default_params_action}>1</div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="el-test t2" on:emit={fn_test} use:observe={default_params_action}>2</div>
+<div
+  class="el-test t2 { is_visible ? 'visible' : '' }"
+  on:intersect={ fn_test_1 } use:observe={ { steps: 10, percent_by: 16 } }
+>1</div>

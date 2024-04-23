@@ -31,6 +31,7 @@
     box-shadow:     0 6px 32px 2px hsla( var(--hs-surface), var(--l-raw-025), var(--a-02) );
     transition:     all .3s var(--cubic-easeInOutSine);
   }
+
   .wrap-logotype {
     width:      fit-content;
     height:     fit-content;

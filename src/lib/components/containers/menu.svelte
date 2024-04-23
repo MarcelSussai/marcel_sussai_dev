@@ -6,7 +6,6 @@
 
   $: open_tog_class = $is_open ? 'open' : ''
 
-
 </script>
 
 <style lang="scss">
@@ -16,28 +15,28 @@
     --brd-clr:  hsla( var(--hs-surface), var(--l-raw-125), 1 );
     --brd-top-sz: 80px;
 
-    height:                 100dvh;
-    max-width:              fit-content;
-    min-width:              248px;
-    max-height:             calc(100dvh - 0px);
-    // display:             none;
-    gap:                    24px;
-    position:               fixed;
-    left:                   0;
-    top:                    0;
-    padding:                12px 12px 64px 12px;
-    z-index:                99;
-    overflow-y:             auto;
-    border-right:           solid 1px   var(--brd-clr);
-    border-top:             solid var(--brd-top-sz) var(--brd-clr);
-    border-bottom:          solid 8px   var(--brd-clr);
-    background:             hsla( var(--hs-surface), var(--l-400), .20 );
-    backdrop-filter:        blur(5px);
+    height:          100dvh;
+    max-width:       fit-content;
+    min-width:       248px;
+    max-height:      calc(100dvh - 0px);
+    // display:      none;
+    gap:             24px;
+    position:        fixed;
+    left:            0;
+    top:             0;
+    padding:         12px 12px 64px 12px;
+    z-index:         99;
+    overflow-y:      auto;
+    border-right:    solid 1px   var(--brd-clr);
+    border-top:      solid var(--brd-top-sz) var(--brd-clr);
+    border-bottom:   solid 8px   var(--brd-clr);
+    background:      hsla( var(--hs-surface), var(--l-400), .20 );
+    backdrop-filter: blur(5px);
+    transform:       translate3d(-100%, 0, 0);
     transition:
       all       .3s var(--cubic-easeInOutSine),
       transform .8s var(--cubic-easeInOutSine)
     ;
-    transform:              translate3d(-100%, 0, 0);
 
     &.open { transform: translate3d(0, 0, 0); }
 
