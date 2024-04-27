@@ -25,6 +25,7 @@
   fill        = fil
   position    = pos
   ornament    = orn
+  gradient    = grd
 */
 
 *, *::before, *::after {
@@ -74,20 +75,22 @@ input, button, textarea, select { font: inherit; padding: 0; border: none; }
 html { font-family: var(--font-main); }
 
 :root {
-  --hs-surface: 240deg,  32%;
-  --hs-aux:     240deg,  16%;
-  --hs-main:    208deg,  80%;
-  --hs-second:  144deg,  80%;
-  --hs-detail:  44deg,   100%;
-  --hs-info:    232deg,  96%;
-  --hs-success: 80deg,   80%;
-  --hs-warning: 28deg,   96%;
-  --hs-error:   8deg,    96%;
-  --hs-alert:   56deg,   88%;
-  --hs-focus:   320deg,  96%;
-  --hs-default: 0deg,    0%;
-  --hs-comment: 168deg,  48%;
-  --hs-effect:  184deg,  72%;
+  --hs-surface: 240deg, 40%;
+  --hs-aux:     240deg, 16%;
+  --hs-mark:    280deg, 80%;
+  --hs-comment: 144deg, 32%;
+  --hs-active:  208deg, 32%;
+  --hs-effect:  184deg, 80%;
+  --hs-info:    232deg, 96%;
+  --hs-success: 80deg,  80%;
+  --hs-warning: 28deg,  96%;
+  --hs-error:   8deg,   96%;
+  --hs-alert:   56deg,  88%;
+  --hs-focus:   320deg, 96%;
+  --hs-main:    208deg, 80%;
+  --hs-second:  144deg, 80%;
+  --hs-detail:  44deg,  100%;
+  --hs-default: 0deg,   0%;
 
   --l-raw-025: 5%;  --l-raw-050: 8%;  --l-raw-075: 10%; --l-raw-100: 12%;
   --l-raw-125: 15%; --l-raw-150: 18%; --l-raw-175: 21%; --l-raw-200: 24%;
@@ -207,11 +210,9 @@ body {
 
 
 .gradient-text {
-  background: linear-gradient(
-    45deg,
-    hsla( var(--hs-main),   var(--l-350), 1 ),
-    hsla( var(--hs-second), var(--l-350), 1 )
-  );
+  --clr1: var(--clr-grd-1, hsla( var(--hs-main),   var(--l-275), 1 ));
+  --clr2: var(--clr-grd-2, hsla( var(--hs-second), var(--l-275), 1 ));
+  background: linear-gradient( var(--deg-grd, 45deg), var(--clr1), var(--clr2) );
   box-decoration-break:         clone;
   -webkit-box-decoration-break: clone;
   text-shadow:                  none;
@@ -219,5 +220,4 @@ body {
   -webkit-text-fill-color:      transparent;
   background-size:              100%;
   background-clip:              text;
-  filter: drop-shadow(2px 2px 4px #0008);
 }

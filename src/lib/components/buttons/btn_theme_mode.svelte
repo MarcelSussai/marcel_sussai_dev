@@ -23,10 +23,10 @@
     --rad:        80px;
     --sz-w:       100%;
     --trs:
-      all             .3s var(--cubic-easeInOutSine),
+      all             .4s var(--cubic-easeInOutSine),
       box-shadow      .2s var(--cubic-easeInOutSine),
       border          .2s var(--cubic-easeInOutSine),
-      outline-offset  .2s var(--cubic-easeInOutSine)
+      outline-offset  .3s var(--cubic-easeInOutSine)
     ;
 
     width:          112px;

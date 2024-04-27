@@ -21,16 +21,17 @@
 
 <style lang="scss">
   .all-colors {
-    padding: 8px;
+    // padding: 8px;
     justify-content: center;
-    gap: 4px;
+    gap: 12px;
     // border: solid 1px hsla( var(--hs-surface), var(--l-500), 1 );
   }
   .clr-tones {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    border: solid 8px #FFF;
-    border-radius: 6px;
+    border: solid 6px #FFF;
+    background: #FFF;
+    // border-radius: 6px;
   }
   .clr-tone {
     --w: 64px;
@@ -39,24 +40,26 @@
     height: 40px;
     background: var(--c);
     font-weight: 900;
-    font-size: var(--fts-150);
+    font-size: var(--fts-275);
+    font-family: var(--font-mono);
     color: #000;
     text-shadow:
-      1px   1px   0px #FFF,
-      -1px  -1px  0px #FFF,
-      1px   -1px  0px #FFF,
-      -1px  1px   0px #FFF
+      1px   1px   1px #FFF,
+      -1px  -1px  1px #FFF,
+      1px   -1px  1px #FFF,
+      -1px  1px   1px #FFF
     ;
   }
-  .clr-n { gap: 4px; padding-top: 16px; }
+  .clr-n { gap: 0px; padding-top: 0px; }
   .clr-n > span {
     background: hsl( var(--name-l), var(--l-950) );
     color: hsl( var(--name-l), var(--l-150) );
     font-size: var(--fts-400);
     line-height: 1;
-    padding: 8px;
-    font-weight: 600;
-    border-radius: 8px;
+    padding: 4px 8px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
   }
 
 </style>

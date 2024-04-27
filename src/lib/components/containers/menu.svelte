@@ -11,6 +11,11 @@
 <style lang="scss">
   @import '$lib/styles/vars.scss';
 
+  @keyframes ani-all-nav {
+    0% { transform: translate3d(-100%, 0, 0); }
+    100% { transform: translate3d(0%, 0, 0); }
+  }
+
   .all-nav { /* styles */
     --brd-clr:  hsla( var(--hs-surface), var(--l-raw-125), 1 );
     --brd-top-sz: 80px;
@@ -48,7 +53,7 @@
       max-width:  unset;
       max-height: unset;
       min-width:  calc( var(--w-md-menu) - 4px);
-      transform:  translate3d(0, 0, 0);
+      animation: ani-all-nav .8s .1s var(--cubic-easeInOutSine) forwards;
       &.open { transform: translate3d(0, 0, 0); }
     }
   }

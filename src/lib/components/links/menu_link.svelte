@@ -9,10 +9,12 @@
   let IcoComponent: ComponentType
   let href:         string
   let name:         string
+  let path:         boolean
   export {
     classs as class, style,
-    IcoComponent, href, name
+    IcoComponent, href, name, path,
   }
+  $: test = path ? ' path' : ''
 </script>
 
 <style lang="scss">
@@ -24,8 +26,9 @@
 
   a.all-link { /* styles */
     --hs-of-this: var(--hs-surface);
-    --c1:         hsl( var(--hs-aux), var(--l-300) );
-    --c2:         hsl( var(--hs-aux), var(--l-600) );
+    --hs-of-aux: var(--hs-aux);
+    --c1:         hsl( var(--hs-of-aux), var(--l-300) );
+    --c2:         hsl( var(--hs-of-aux), var(--l-600) );
     --c-brd:      hsl( var(--hs-of-this), var(--l-950) );
     --c-txt:      hsl( var(--hs-of-this), var(--l-200) );
     --f-sz:       var(--fts-075);
@@ -51,10 +54,16 @@
       transform       .1s var(--cubic-easeInOutSine)
     ;
     box-shadow:
-      12px 12px 48px -16px hsla( var(--hs-of-this), var(--l-025), .24 )
+      12px 12px 48px -16px hsla( var(--hs-of-this), var(--l-100), .32 )
     ;
 
-    &:hover {
+    &.path {
+      --hs-of-this: var(--hs-active);
+      --hs-of-aux:  var(--hs-active);
+      outline:        solid 2px hsla( var(--hs-of-this), var(--l-400), 1 );
+      outline-offset: -4px;
+    }
+    &:hover, &.path:hover {
       --c1:       hsla( var(--hs-main),     var(--l-400), 1 );
       --c2:       hsla( var(--hs-second),   var(--l-400), 1 );
       --c-brd:    hsla( var(--hs-of-this),  var(--l-500), 1 );
@@ -70,6 +79,8 @@
       );
       outline-offset: 2px;
       z-index: 99;
+      border: solid 2px var(--c-brd);
+      transition: all .3s var(--cubic-easeInOutSine);
     }
     &:focus-visible {
       outline: solid 4px hsla( var(--hs-focus),  var(--l-500), 1 );
@@ -78,7 +89,7 @@
     &:active { transform: translate3d(3px, 3px, 0); }
     // @media (min-width: $md-menu) {  }
     // @media (min-width: $media-050) { --f-sz: var(--fts-075); }
-    @media (min-width: $media-100) { --f-sz: var(--fts-125); --h-ico: 48px; }
+    @media (min-width: $media-100) { --f-sz: var(--fts-125); --h-ico: 44px; }
     // @media (min-width: $media-150) { --f-sz: var(--fts-125); }
   }
 
@@ -104,7 +115,7 @@
   }
 </style>
 
-<a {href} {style} class="all-link {classs}" on:click={() => is_open.set(false)}>
+<a {href} {style} class="{classs ? classs + ' ' : ''}all-link{test}" on:click={() => is_open.set(false)}>
   <span class="ico flx-center"> <svelte:component this={IcoComponent} /> </span>
   <span class="text flx-center">{name}</span>
 </a>

@@ -12,7 +12,7 @@
     --m-clr:      hsl(var(--hs-main), var(--l-500));
     --s-clr:      hsl(var(--hs-second), var(--l-500));
     --circle-clr: hsl(var(--hs-surface), var(--l-raw-050));
-    --str-clr:      hsla(var(--hs-surface), var(--l-raw-975), .12);
+    --str-clr:    hsla(var(--hs-surface), var(--l-raw-975), .08);
 
     width:  100%;
     height: 100%;

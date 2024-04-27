@@ -11,9 +11,10 @@
 <style lang="scss">
   @import '$lib/styles/vars.scss';
 
-  button {
+  :global([data-theme="light"] .btn-open) { --l-brd: var(--l-975); }
+  :global([data-theme="dark"] .btn-open) { --l-brd: var(--l-900); }
+  .btn-open {
     --hs-of-this: var(--hs-surface);
-    --brd-clr:  hsla( var(--hs-of-this), var(--l-raw-100), 1 );
 
     width:            64px;
     height:           56px;
@@ -22,11 +23,11 @@
     right:            0;
     z-index:          999;
     padding:          0px 8px 0px 0px;
-    border-top:       solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
-    border-left:      solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
-    border-bottom:    solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
+    border-top:       solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
+    border-left:      solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
+    border-bottom:    solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
     border-radius:    32px 0 0 32px;
-    background:       hsla( var(--hs-of-this), var(--l-350), .32 );
+    background:       hsla( var(--hs-of-this), var(--l-800), .64 );
     backdrop-filter:  blur(2px);
     cursor:           pointer;
     transition:       all .3s var(--cubic-easeInOutSine);
@@ -42,17 +43,17 @@
     width:      40px;
     height:     40px;
     position:   relative;
-    background: hsla( var(--hs-of-this), var(--l-200), 1 );
-    border: solid 2px hsla( var(--hs-of-this), var(--l-925), .8 );
+    background: hsla( var(--hs-of-this), var(--l-150), 1 );
+    border: solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
     border-radius: 9999px;
-    box-shadow: inset 0px 0 16px 0px hsla( var(--hs-of-this), var(--l-500), .40 );
+    box-shadow: inset 0px 0 8px 0px hsla( var(--hs-of-this), var(--l-800), .48 );
     transition: all .4s var(--cubic-easeInOutSine);
   }
   .bars, .bars::before, .bars::after {
     width: 20px;
     height: 3px;
     border-radius: 99px;
-    background: hsl( var(--hs-of-this), var(--l-925) );
+    background: hsl( var(--hs-of-this), var(--l-brd, var(--l-975)) );
     transition: all .4s var(--cubic-easeInOutSine);
   }
   .bars::before, .bars::after {
@@ -73,11 +74,11 @@
   .txt {
     position: absolute;
     z-index: 999;
-    right: -12px;
+    right: -15px;
     transform: rotate(-90deg);
     display: block;
-    font-size: var(--fts-075);
-    font-weight: 700;
+    font-size: var(--fts-125);
+    font-weight: 400;
     color: hsla( var(--hs-of-this), var(--l-175), 1 );
     text-shadow:
       2px 2px 2px hsla( var(--hs-of-this), var(--l-900), .32 ),
@@ -87,7 +88,7 @@
   }
 </style>
 
-<button {style} class="{classs} flx-center {open_tog_class}"
+<button {style} class="btn-open {classs} flx-center {open_tog_class}"
   on:click={hand_is_open_tog}
 >
   <span class="txt">menu</span>

@@ -3,27 +3,27 @@
   import { fade } from 'svelte/transition'
   import { config_theme } from '$lib/stores/theme'
 	import { Header } from '$lib'
+	import { is_active_link, hand_is_active_link } from '$lib/stores/nav_store.js';
+	import { navigating } from '$app/stores'
+
+  export let data
+
+
+  $: if($navigating) is_active_link.set($navigating.to?.url.pathname || '')
 
   onMount(() => {
     config_theme()
-    // addEventListener('scroll', (e) => {
-    //   console.log(window.scrollY)
-    // })
-
-    // addEventListener('wheel', (e) => {
-    //   if(document.scrollingElement) document.scrollingElement.scrollTop += e.deltaY * .16
-    // })
+    hand_is_active_link(data.url)
   })
-  export let data
 </script>
 
 <style lang="scss">
   @import '$lib/styles/vars.scss';
   main {
-    padding:  76px 4px 6400px 4px;
+    padding:  96px 0px 6400px 0px;
     gap: 32px;
     @media (min-width: $md-menu) {
-      padding:  76px 4px 6400px var(--w-md-menu);
+      padding:  120px 4px 6400px var(--w-md-menu);
     }
   }
 </style>

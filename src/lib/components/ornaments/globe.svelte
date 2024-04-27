@@ -69,7 +69,7 @@
       phi:              0,
       theta:            0,
       mapSamples:       4848,
-      mapBrightness:    32.0,
+      mapBrightness:    40.0,
       mapBaseBrightness: 0.00,
       diffuse:          2.00,
       dark:             0.80,
@@ -77,7 +77,7 @@
       glowColor:        [0.0823529411764706, 0.7803921568627451, 0.3607843137254902],
       scale:            1,
       offset:           [0, 0],
-      opacity:          0.80,
+      opacity:          0.92,
       width:            width   * 2,
       height:           height  * 2,
       devicePixelRatio: 2,
@@ -105,20 +105,25 @@
   @keyframes rotating {
     0% { transform: rotate(-360deg); } 100% { transform: rotate(360deg); }
   }
+  @keyframes ani-cont-globe {
+    0% { opacity: 0; transform: scale3d(0, 0, 0); } 100% { opacity: 1; transform: scale3d(1, 1, 1); }
+  }
   .cont-globe {
-    --max-wh:       672px;
+    --max-wh:       680px;
     --pos-all-bef:  12px;
     --brd-w-bef:    12px;
     --pos-all-bef:  12px;
 
-    width:          fit-content;
-    height:         fit-content;
+    // width:          fit-content;
+    // height:         fit-content;
     max-width:      var(--max-wh);
     max-height:     var(--max-wh);
     aspect-ratio:   1;
     position:       relative;
     overflow:       clip;
     transition:     all .3s var(--cubic-easeInOutSine);
+    opacity: 0; transform: scale(0);
+    animation: ani-cont-globe .6s .2s var(--cubic-easeInOutSine) forwards;
 
   }
   @media screen {

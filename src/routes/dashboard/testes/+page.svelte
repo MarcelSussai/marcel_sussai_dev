@@ -26,7 +26,32 @@
     opacity: 1;
     background: red;
   }
+  .teste-pseudo {
+    padding: 8px;
+    background: cyan;
+    width: 80px;
+    height: 80px;
+    position: relative;
+
+    &::after {
+      content: '';
+      background: red;
+      position: absolute;
+      top: -8px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -5px;
+    }
+
+  }
 </style>
+
+
+<div class="teste-pseudo flx-center">
+  1
+</div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
