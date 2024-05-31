@@ -11,6 +11,16 @@
 <style lang="scss">
   @import '$lib/styles/vars.scss';
 
+  @keyframes ani-btn-menu {
+    0% {
+      transform: translate3d(100%, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+
+    }
+  }
+
   :global([data-theme="light"] .btn-open) { --l-brd: var(--l-975); }
   :global([data-theme="dark"] .btn-open) { --l-brd: var(--l-900); }
   .btn-open {
@@ -19,7 +29,7 @@
     width:            64px;
     height:           56px;
     position:         fixed;
-    bottom:           64px;
+    bottom:           40px;
     right:            0;
     z-index:          999;
     padding:          0px 8px 0px 0px;
@@ -35,6 +45,8 @@
       inset 2px 0 16px -2px hsla( var(--hs-of-this), var(--l-raw-850), .8 ),
       -8px 4px 32px 0px hsla( var(--hs-of-this), var(--l-500), .48 )
     ;
+    animation: ani-btn-menu .6s var(--cubic-easeInOutSine) forwards;
+
     &:hover { --hs-of-this: var(--hs-effect); }
     @media (min-width: $md-menu) { display: none; }
   }
@@ -74,7 +86,7 @@
   .txt {
     position: absolute;
     z-index: 999;
-    right: -15px;
+    right: -14px;
     transform: rotate(-90deg);
     display: block;
     font-size: var(--fts-125);

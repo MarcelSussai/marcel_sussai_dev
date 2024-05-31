@@ -10,9 +10,11 @@
   @keyframes ani-header {
     0% {
       opacity: 0;
+      transform: translate3d(0, -100%, 0);
     }
     100% {
       opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -28,10 +30,16 @@
   }
   header {
     width:          100%;
-    height:         40px;
     position:       fixed;
     top:            0;
     z-index:        99999999;
+    transition:     all .3s var(--cubic-easeInOutSine);
+  }
+  .ornament {
+    width:          100%;
+    height:         40px;
+    position:       fixed;
+    top:            0;
     background:
       linear-gradient(to bottom,
       hsla( var(--hs-surface), var(--l-raw-125), var(--opc-bg, 1) ) 24%,
@@ -39,7 +47,7 @@
     ;
     border-bottom:  solid var(--s-01) hsla( var(--hs-surface), var(--l-raw-500), var(--a-01) );
     box-shadow:     0 6px 32px 2px hsla( var(--hs-surface), var(--l-raw-025), var(--a-02) );
-    // animation: ani-header .6s var(--cubic-easeInOutSine) forwards;
+    animation: ani-header .6s var(--cubic-easeInOutSine) forwards;
     transition:     all .3s var(--cubic-easeInOutSine);
   }
 
@@ -62,4 +70,5 @@
   <BtnOpenMenu />
   <div class="wrap-logotype flx-center"> <Logotype /> </div>
   <Menu />
+  <div class="ornament"></div>
 </header>

@@ -20,10 +20,10 @@
 <style lang="scss">
   @import '$lib/styles/vars.scss';
   main {
-    padding:  96px 0px 6400px 0px;
-    gap: 32px;
+    padding:  88px 0px 6400px 0px;
+    gap: 16px;
     @media (min-width: $md-menu) {
-      padding:  120px 4px 6400px var(--w-md-menu);
+      padding:  96px 4px 6400px var(--w-md-menu);
     }
   }
 </style>

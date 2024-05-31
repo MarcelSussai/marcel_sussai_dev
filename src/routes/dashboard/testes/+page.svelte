@@ -14,7 +14,7 @@
 
 <style lang="scss">
   .el-test {
-    width: 80px;
+    width:  80px;
     height: 80px;
     padding: 8px;
     background: cadetblue;

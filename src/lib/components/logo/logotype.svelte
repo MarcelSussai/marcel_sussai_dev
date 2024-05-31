@@ -69,7 +69,7 @@
       inset 0 0 16px 4px hsla( var(--hs-of-this), var(--l-raw-225), .48 )
     ;
     transition: all .3s var(--cubic-easeInOutSine);
-    animation: ani-logotype 1s var(--cubic-easeInOutSine) forwards ;
+    animation: ani-logotype 1s .2s var(--cubic-easeInOutSine) forwards ;
 
     @media (min-width: $media-050) {
       --f-sz-names: var(--fts-350);

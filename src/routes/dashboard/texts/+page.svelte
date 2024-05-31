@@ -29,15 +29,13 @@
     .grd-config-1 {
       --clr-grd-1: hsla( var(--hs-main), var(--l-350), 1 );
       --clr-grd-2: hsla( var(--hs-main), var(--l-125), 1 );
-      --deg-grd: 8deg;
-      @include drop-shadow-effect-light(
-        $clr-hs-1: var(--hs-main),
-        $clr-hs-2: var(--hs-main),
-        $alpha-1: .24,
-        $alpha-2: .24
-      );
-      // --clr-sha-1: hsla( var(--hs-main),   var(--l-350), .24 );
-      // --clr-sha-2: hsla( var(--hs-main),   var(--l-350), .24 );
+      --deg-grd: 0deg;
+      // @include drop-shadow-effect-light(
+      //   $clr-hs-1: var(--hs-main),
+      //   $clr-hs-2: var(--hs-main),
+      //   $alpha-1: .24,
+      //   $alpha-2: .24
+      // );
     }
     .grd-config-2 {
       --clr-grd-1: hsla( var(--hs-second), var(--l-350), 1 );

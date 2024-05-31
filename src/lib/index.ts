@@ -18,7 +18,9 @@ import BtnThemeMode from './components/buttons/btn_theme_mode.svelte'
 import Header       from './components/containers/header.svelte'
 import Globe        from './components/ornaments/globe.svelte'
 import MarqueeHome  from './components/ornaments/marquee_home.svelte'
-
+import MainTitle    from './components/texts/main_title.svelte'
+import MainTitleH2  from './components/texts/main_title_h2.svelte'
+import MainP        from './components/texts/main_p.svelte'
 
 
 export {
@@ -30,4 +32,5 @@ export {
   BtnThemeMode,   BtnOpenMenu,
   Header,
   Globe,          MarqueeHome,
+  MainTitle,      MainP,          MainTitleH2,
 }

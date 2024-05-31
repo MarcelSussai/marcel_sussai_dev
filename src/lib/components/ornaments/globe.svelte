@@ -4,9 +4,9 @@
   import createGlobe from 'cobe'
 
 /*
-      baseColor:        [0.235294, 0.564706, 0.898039],
-      glowColor:        [0.235294, 0.898039, 0.47451],
-      baseColor:        [0.0823529411764706, 0.4549019607843137, 0.7803921568627451],
+  baseColor:        [0.235294, 0.564706, 0.898039],
+  glowColor:        [0.235294, 0.898039, 0.47451],
+  baseColor:        [0.0823529411764706, 0.4549019607843137, 0.7803921568627451],
 */
 
   const size_spring_x = spring(100, {
@@ -51,7 +51,7 @@
     move_pointers(e.clientX, e.clientY)
   }
   const handle_touchMove  = (e: TouchEvent) => {
-    console.log(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+    // console.log(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
     move_pointers(e.targetTouches[0].clientX, e.targetTouches[0].clientY)
   }
 
@@ -109,7 +109,7 @@
     0% { opacity: 0; transform: scale3d(0, 0, 0); } 100% { opacity: 1; transform: scale3d(1, 1, 1); }
   }
   .cont-globe {
-    --max-wh:       680px;
+    --max-wh:       576px;
     --pos-all-bef:  12px;
     --brd-w-bef:    12px;
     --pos-all-bef:  12px;
