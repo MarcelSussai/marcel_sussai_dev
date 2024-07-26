@@ -26,18 +26,18 @@
   .btn-open {
     --hs-of-this: var(--hs-surface);
 
-    width:            64px;
+    width:            72px;
     height:           56px;
     position:         fixed;
     bottom:           40px;
     right:            0;
     z-index:          999;
-    padding:          0px 8px 0px 0px;
-    border-top:       solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
-    border-left:      solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
-    border-bottom:    solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
+    padding:          0px 16px 0px 0px;
+    border-top:       solid 1px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
+    border-left:      solid 1px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
+    border-bottom:    solid 1px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
     border-radius:    32px 0 0 32px;
-    background:       hsla( var(--hs-of-this), var(--l-800), .64 );
+    background:       hsla( var(--hs-of-this), var(--l-850), .64 );
     backdrop-filter:  blur(2px);
     cursor:           pointer;
     transition:       all .3s var(--cubic-easeInOutSine);
@@ -55,8 +55,8 @@
     width:      40px;
     height:     40px;
     position:   relative;
-    background: hsla( var(--hs-of-this), var(--l-150), 1 );
-    border: solid 2px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
+    background: hsla( var(--hs-of-this), var(--l-200), 1 );
+    border: solid 1px hsla( var(--hs-of-this), var(--l-brd, var(--l-975)), 1 );
     border-radius: 9999px;
     box-shadow: inset 0px 0 8px 0px hsla( var(--hs-of-this), var(--l-800), .48 );
     transition: all .4s var(--cubic-easeInOutSine);
@@ -86,11 +86,11 @@
   .txt {
     position: absolute;
     z-index: 999;
-    right: -14px;
+    right: -12px;
     transform: rotate(-90deg);
     display: block;
     font-size: var(--fts-125);
-    font-weight: 400;
+    font-weight: 500;
     color: hsla( var(--hs-of-this), var(--l-175), 1 );
     text-shadow:
       2px 2px 2px hsla( var(--hs-of-this), var(--l-900), .32 ),

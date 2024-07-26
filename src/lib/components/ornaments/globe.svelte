@@ -47,11 +47,10 @@
   }
   const handle_pointerUp  = (e: PointerEvent) => { cancel_pointers() }
   const handle_pointerOut = (e: PointerEvent) => { cancel_pointers() }
-  const handle_mouseMove  = (e: MouseEvent) => {
+  const handle_mouseMove  = (e: MouseEvent) => {    
     move_pointers(e.clientX, e.clientY)
   }
   const handle_touchMove  = (e: TouchEvent) => {
-    // console.log(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
     move_pointers(e.targetTouches[0].clientX, e.targetTouches[0].clientY)
   }
 

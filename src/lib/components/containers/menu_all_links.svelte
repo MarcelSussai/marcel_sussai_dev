@@ -15,13 +15,12 @@
 
   const LINKS = [
     { name: 'home',         href: '/', icon: IcoHome      },
-    { name: 'quem sou',     href: '/dashboard/colors', icon: IcoAboutMe   },
+    { name: 'quem sou',     href: '/who_i_am', icon: IcoAboutMe   },
     { name: 'habilidades',  href: '/dashboard/texts', icon: IcoSkills    },
     { name: 'portfólio',    href: '/dashboard/testes', icon: IcoPortfolio },
     { name: 'artigos',      href: '', icon: IcoArticles  },
     { name: 'contato',      href: '', icon: IcoContact   },
   ]
-
 
   // $: console.log($is_active_link)
   onMount(() => {

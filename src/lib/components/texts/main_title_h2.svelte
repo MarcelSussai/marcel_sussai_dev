@@ -47,9 +47,9 @@
       ;
       font-size: var(--fts-400);
     }
-    @media (min-width: $media-250) { font-size: var(--fts-500); }
-    @media (min-width: $media-450) { font-size: var(--fts-600); }
-    @media (min-width: $media-675) { font-size: var(--fts-650); }
+    @media (min-width: $media-250) { font-size: var(--fts-450); }
+    @media (min-width: $media-450) { font-size: var(--fts-550); }
+    @media (min-width: $media-675) { font-size: var(--fts-600); }
   }
 </style>
 
@@ -59,7 +59,7 @@
     `--show-opc:${is_visible ? '1' : '0'};` +
     `--show-trsl:${is_visible ? '0' : '-16%'};`
   }
-  class="{classs} default-text {is_visible ? 'visible' : ''}"
+  class="{classs} default-text"
   use:observe={ { percent_by: 32 } }
   on:intersect={fn_visible}
 > <slot></slot> </h2>

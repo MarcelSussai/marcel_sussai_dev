@@ -11,6 +11,11 @@ declare global {
   interface Window {
     IntersectionObserver: typeof IntersectionObserver
   }
+  interface DataCard {
+    title: string
+    text: string
+    icon?: SvelteComponent
+  }
 }
 
 export {};

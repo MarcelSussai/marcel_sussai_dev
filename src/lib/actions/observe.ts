@@ -22,7 +22,7 @@ const stepsToThreshold = (s: number | number[]) => {
 }
 
 export const observe: Action<
-  HTMLDivElement
+  HTMLElement
   , Params_action
   , { 'on:intersect': (e: CustomEvent) => void }
 > = ( node, { top = 0, right = 0, bottom = 0, left = 0, steps = 100, percent_by = 100 } ) => {

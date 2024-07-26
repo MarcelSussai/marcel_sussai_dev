@@ -26,7 +26,7 @@
   $size:    1px,
   $blur:    1px,
   $clr-hs:  var(--hs-surface),
-  $clr-l:   var(--l-950),
+  $clr-l:   var(--l-975),
   $alpha:   .96,
   $name:    --sha-eff-mark,
 ) {
@@ -35,6 +35,22 @@
     drop-shadow( -#{$size} -#{$size} #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} ))
     drop-shadow(  #{$size} -#{$size} #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} ))
     drop-shadow( -#{$size}  #{$size} #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} ))
+  ;
+}
+
+@mixin drop-shadow-effect-mark-text(
+  $size:    1px,
+  $blur:    1px,
+  $clr-hs:  var(--hs-surface),
+  $clr-l:   var(--l-975),
+  $alpha:   .96,
+  $name:    --sha-eff-mark,
+) {
+  text-shadow:
+    #{$size}    #{$size}  #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} ),
+    -#{$size}   -#{$size} #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} ),
+    #{$size}    -#{$size} #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} ),
+    -#{$size}   #{$size}  #{$blur} hsla( #{$clr-hs}, #{$clr-l}, #{$alpha} )
   ;
 }
 
@@ -60,13 +76,13 @@
   $clr-hs-2:  var(--hs-second),
   $deg-grd:   0deg,
   $clr-l-1:   var(--l-500),
-  $clr-l-2:   var(--l-150),
+  $clr-l-2:   var(--l-100),
   $alpha-1:   .32,
   $alpha-2:   .32
 ) {
   --clr-grd-1: hsla( #{$clr-hs-1}, #{$clr-l-1}, 1 );
   --clr-grd-2: hsla( #{$clr-hs-2}, #{$clr-l-2}, 1 );
-  --deg-grd:   0deg;
+  --deg-grd:   #{$deg-grd};
   @include drop-shadow-effect-light(
     $clr-hs-1: #{$clr-hs-1},
     $clr-hs-2: #{$clr-hs-2},
